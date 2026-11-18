@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molduraria por Juliana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar e Logotipo -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="#">
+                <span class="logo-script">Por Juliana Oliveira</span>
+                <span class="logo-main">MOLDURARIA</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Banner Hero com Imagem de Fundo -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Suas paredes<br>dão as boas-vindas.</h1>
+            <p>Emolduramento sob medida para proteger, valorizar e eternizar as suas obras e memórias.</p>
+            <a href="#simulador" class="btn-hero">Simular Orçamento</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="secao-diferenciais">
+            <div class="diferencial">
+                <h3>01. Madeira Selecionada</h3>
+                <p>Estruturas em madeira maciça com acabamentos lisos, amadeirados ou metalizados.</p>
+            </div>
+            <div class="diferencial">
+                <h3>02. Proteção e Vidro</h3>
+                <p>Opções de montagem com vidro para proteção contra poeira e ação do tempo.</p>
+            </div>
+            <div class="diferencial">
+                <h3>03. Feito Sob Medida</h3>
+                <p>Cada peça é cortada e montada artesanalmente de acordo com o tamanho exato da sua necessidade.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Vitrine Full Width (Gerenciada dinamicamente pelo script.js) -->
+    <section class="secao-vitrine">
+        <h2 class="titulo-vitrine">Acabamentos Disponíveis</h2>
+        <div class="vitrine-grid">
+            <!-- Os cards das molduras entram aqui via JavaScript -->
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="simulador" class="secao-simulador">
+            <h2>Orçamento Sob Medida</h2>
+            <p class="subtitulo-simulador">Insira as medidas em centímetros para calcular o valor estimado do seu
+                projeto.</p>
+
+            <div class="campo">
+                <label for="largura">Largura (cm):</label>
+                <input type="number" id="largura" placeholder="Ex: 50">
+            </div>
+
+            <div class="campo">
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" placeholder="Ex: 70">
+            </div>
+
+            <div class="campo">
+                <label for="tipoMoldura">Escolha o Acabamento:</label>
+                <select id="tipoMoldura">
+                    <!-- As opções do select entram aqui via JavaScript -->
+                </select>
+            </div>
+
+            <button type="button" class="btn-calcular" onclick="calcularOrcamento()">Calcular Preço</button>
+
+            <!-- Resultado -->
+            <div id="resultado" class="box-resultado">
+                <h3>Valor Estimado:</h3>
+                <p id="textoValor">R$ 0,00</p>
+                <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Solicitar via WhatsApp</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé Minimalista -->
+    <footer class="rodape">
+        <div class="rodape-container">
+            <!-- Marca -->
+            <div class="rodape-marca">
+                <span class="logo-script logo-rodape-script">Por Juliana Oliveira</span>
+                <span class="logo-main logo-rodape-main">MOLDURARIA</span>
+            </div>
+
+            <!-- Informações e Endereço -->
+            <div class="rodape-info">
+                <p>Sombrio / Santa Catarina - Brasil</p>
+                <p>Emolduramento artesanal e sob medida.</p>
+            </div>
+
+            <!-- Links de Contacto Rápidos -->
+            <div class="rodape-links">
+                <a href="https://www.instagram.com/moldurariaporjuliana/" target="_blank"
+                    class="link-social">Instagram</a>
+                <a href="https://wa.me/5548996014108" target="_blank" class="link-social">WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Direitos de Autor e Acesso Restrito -->
+        <div class="rodape-direitos-wrapper">
+            <p>&copy; 2026 Molduraria por Juliana. Todos os direitos reservados.</p>
+            <a href="login.html" class="link-admin-restrito">Área Restrita</a>
+        </div>
+    </footer>
+
+    <!-- Modal de Visualização Ampliada -->
+    <div id="modalMoldura" class="modal-overlay" onclick="fecharModalFora(event)">
+        <div class="modal-conteudo">
+            <button type="button" class="btn-fechar-modal" onclick="fecharModal()">&times;</button>
+            <div class="modal-corpo">
+                <img id="modalImg" src="" alt="Moldura Ampliada">
+                <div class="modal-info">
+                    <h3 id="modalTitulo"></h3>
+                    <p id="modalDescricao"></p>
+                    <span id="modalPreco" class="modal-preco"></span>
+                    <button type="button" id="btnProsseguir" class="btn-calcular">Simular com esta Moldura</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>

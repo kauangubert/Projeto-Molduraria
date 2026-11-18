@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Molduraria por Juliana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <span class="logo-script">Por Juliana Oliveira</span>
+                <span class="logo-main">MOLDURARIA</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container login-container">
+        <div class="secao-simulador">
+            <h2 class="text-center mt-small">Área Restrita</h2>
+            <p class="subtitulo-simulador text-center">Aceda ao painel de gestão do ateliê.</p>
+
+            <form onsubmit="event.preventDefault(); window.location.href='admin.html';">
+                <div class="campo">
+                    <label for="email">E-mail de Acesso:</label>
+                    <input type="email" id="email" placeholder="admin@molduraria.com" required>
+                </div>
+                <div class="campo">
+                    <label for="senha">Palavra-passe:</label>
+                    <input type="password" id="senha" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-calcular">Entrar no Sistema</button>
+            </form>
+
+            <div class="text-center mt-medium">
+                <a href="index.html" class="link-voltar-simples">← Voltar para a página inicial</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

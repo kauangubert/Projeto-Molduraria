@@ -1,0 +1,643 @@
+/* --- Importação de Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* --- Estilos Gerais --- */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #faf8f5;
+    color: #222;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --- Navbar e Logotipo --- */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.88);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: -10px;
+    color: #ffffff;
+}
+
+.logo-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* --- Vitrine Full Width (De ponta a ponta) --- */
+.secao-vitrine {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+
+.titulo-vitrine {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: #000;
+    text-align: center;
+}
+
+.vitrine-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 10px 5vw 30px 5vw;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-produto {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 2px;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.card-produto:hover {
+    transform: none;
+    border-bottom: 2px solid #000;
+}
+
+.card-produto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+
+.card-produto h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.descricao-produto {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.preco-tag {
+    font-weight: 600;
+    color: #000;
+    display: block;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+/* Personalização da barra de rolagem da vitrine */
+.vitrine-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.vitrine-grid::-webkit-scrollbar-track {
+    background: #eaeaea;
+    border-radius: 10px;
+}
+
+.vitrine-grid::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 10px;
+}
+
+/* --- Simulador --- */
+.secao-simulador {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 2px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.secao-simulador h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.subtitulo-simulador {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #faf8f5;
+    transition: border-color 0.3s;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #000;
+}
+
+/* --- Botões --- */
+.btn-calcular {
+    background: #000;
+    color: white;
+    border: 1px solid #000;
+    padding: 15px 25px;
+    font-size: 1em;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-calcular:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* --- Resultado e WhatsApp --- */
+.box-resultado {
+    display: none;
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.box-resultado h3 {
+    margin: 0 0 10px 0;
+    color: #000;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#textoValor {
+    font-size: 2.2em;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    color: #000;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+}
+
+/* --- Hero Section (Banner com Imagem de Fundo) --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('img/fundo-molduraria.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+    border-bottom: none;
+}
+
+.hero-content {
+    max-width: 650px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5em;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    color: #f4f1eb;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* --- Botão do Hero --- */
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 18px 40px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* --- Diferenciais (Qualidade da Moldura) --- */
+.secao-diferenciais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 70px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.diferencial h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.diferencial p {
+    font-size: 0.95em;
+    color: #777;
+    line-height: 1.6;
+}
+
+.secao-vitrine h2 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+
+/* --- Rodapé (Footer) --- */
+.rodape {
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #ffffff;
+    padding: 50px 20px 20px 20px;
+    margin-top: 50px;
+}
+
+.rodape-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #222;
+}
+
+.rodape-marca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape-info {
+    text-align: center;
+}
+
+.rodape-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.link-social {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.link-social:hover {
+    color: #777777;
+}
+
+.rodape-direitos {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rodape-direitos p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75em;
+    color: #555555;
+}
+
+/* --- Modal de Visualização Ampliada --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    max-width: 780px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    animation: surgimentoSuave 0.25s ease;
+}
+
+@keyframes surgimentoSuave {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #777;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.btn-fechar-modal:hover {
+    color: #000;
+}
+
+.modal-corpo {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.modal-corpo img {
+    width: 50%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid #eee;
+}
+
+.modal-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.modal-info p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modal-preco {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.logo-rodape-script {
+    font-size: 1.5em;
+    margin-bottom: -5px;
+}
+
+.logo-rodape-main {
+    font-size: 2em;
+}
+
+.rodape-direitos-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 25px auto 0 auto;
+    padding: 0 20px;
+}
+
+.link-admin-restrito {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.75em;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s;
+}
+
+.link-admin-restrito:hover {
+    color: #fff;
+}
+
+/* Utilitários para telas de Login e Admin */
+.text-center {
+    text-align: center;
+}
+
+.mt-small {
+    margin-top: 5px;
+}
+
+.mt-medium {
+    margin-top: 20px;
+}
+
+.mt-large {
+    margin-top: 25px;
+}
+
+.login-container {
+    max-width: 450px;
+    margin: 80px auto;
+}
+
+.admin-container {
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.link-voltar-simples {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.link-voltar-destaque {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-section {
+        height: 60vh;
+        justify-content: center;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .rodape-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .modal-conteudo {
+        padding: 25px;
+    }
+
+    .modal-corpo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .modal-corpo img,
+    .modal-info {
+        width: 100%;
+    }
+
+    .modal-corpo img {
+        height: 220px;
+    }
+}

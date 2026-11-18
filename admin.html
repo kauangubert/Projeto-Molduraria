@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Molduraria por Juliana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <span class="logo-script">Por Juliana Oliveira</span>
+                <span class="logo-main">PAINEL ADMIN</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container admin-container">
+        <div class="secao-simulador">
+            <h2>Registar Nova Moldura</h2>
+            <p class="subtitulo-simulador">Preencha os dados abaixo para adicionar um novo acabamento ao catálogo
+                (Simulação).</p>
+
+            <form onsubmit="event.preventDefault(); alert('Moldura registada com sucesso! (Modo de simulação)');">
+                <div class="campo">
+                    <label for="nomeMoldura">Nome do Acabamento:</label>
+                    <input type="text" id="nomeMoldura" placeholder="Ex: Moldura Alumínio Escovado" required>
+                </div>
+                <div class="campo">
+                    <label for="precoMetro">Preço por Metro (R$):</label>
+                    <input type="number" id="precoMetro" placeholder="Ex: 85.00" step="0.01" required>
+                </div>
+                <div class="campo">
+                    <label for="descricaoMoldura">Descrição Curta:</label>
+                    <input type="text" id="descricaoMoldura" placeholder="Ex: Perfil minimalista em alumínio..."
+                        required>
+                </div>
+                <div class="campo">
+                    <label for="imagemMoldura">Ficheiro da Imagem:</label>
+                    <input type="file" id="imagemMoldura" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-calcular">Salvar Novo Acabamento</button>
+            </form>
+
+            <div class="text-center mt-large">
+                <a href="index.html" class="link-voltar-destaque">Sair / Voltar ao Site</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
